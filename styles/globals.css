@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cyber-dark text-white antialiased;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 243, 255, 0.15) 0%,
+    rgba(157, 0, 255, 0.15) 100%
+  );
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyber-blue to-cyber-purple;
+}
+
+@layer components {
+  .cyber-text-glow {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  }
+  
+  .cyber-border-glow {
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+  }
+  
+  .prose {
+    @apply text-gray-300;
+  }
+  
+  .prose h1, .prose h2, .prose h3 {
+    @apply text-cyber-blue font-bold;
+  }
+  
+  .prose a {
+    @apply text-cyber-purple hover:text-cyber-blue transition-colors;
+  }
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 243, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 243, 255, 0.5);
+}
+
+/* Replace existing video styles */
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  .hover\:shadow-glow:hover {
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.5);
+  }
+  
+  .animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  .cyber-gradient {
+    background: linear-gradient(
+      45deg,
+      rgba(0, 243, 255, 0.1),
+      rgba(157, 0, 255, 0.1),
+      rgba(0, 243, 255, 0.2)
+    );
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+  }
+
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(50px); }
+}
