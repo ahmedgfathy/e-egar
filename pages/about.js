@@ -6,7 +6,7 @@ export default function About() {
         <div className="absolute inset-0 gradient-bg opacity-50"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold text-gradient mb-6">
-            About E-GAR
+            About Contaboo
           </h1>
           <p className="text-xl text-cyber-blue">
             Where innovation meets simplicity in server automation
@@ -51,7 +51,7 @@ export default function About() {
           {/* Closing Statement */}
           <div className="text-center py-12">
             <p className="text-2xl font-bold text-gradient cyber-text-glow">
-              E-GAR – Automation That Works While You Sleep
+              Contaboo – Automation That Works While You Sleep
             </p>
           </div>
         </div>

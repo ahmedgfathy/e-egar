@@ -1,8 +1,8 @@
-# 🚀 E-GAR: Next-Gen Server Management
+# 🚀 Contaboo: Next-Gen Server Management
 
 <div align="center">
 
-![E-GAR Banner](public/banner.png)
+![Contaboo Banner](public/banner.png)
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.3.1-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3-blue?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
@@ -10,7 +10,7 @@
 
 A modern web platform for automated cloud infrastructure management through powerful shell scripts.
 
-[Demo](https://egar.vercel.app) · [Documentation](#documentation) · [Features](#features) · [Getting Started](#getting-started)
+[Demo](https://contaboo.vercel.app) · [Documentation](#documentation) · [Features](#features) · [Getting Started](#getting-started)
 
 </div>
 
@@ -27,8 +27,8 @@ A modern web platform for automated cloud infrastructure management through powe
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/egar.git
-cd egar
+git clone https://github.com/yourusername/contaboo.git
+cd contaboo
 ```
 
 2. **Install dependencies**
@@ -42,6 +42,10 @@ npm run dev
 ```
 
 Visit [http://localhost:3000](http://localhost:3000) to see the application.
+
+## 24/7 Reliability
+
+At Contaboo, we understand the importance of uptime, security, and efficiency. That's why every solution we offer is designed to run 24/7—fully automated, fully reliable. With just a single command, our scripts execute your required tasks exactly as defined, whether it's system updates, backups, service monitoring, deployment, or scaling. Think of it as having a full DevOps team in one command line.
 
 ## 🛠️ Tech Stack
 

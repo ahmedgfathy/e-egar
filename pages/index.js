@@ -5,12 +5,23 @@ export default function Home() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    // Ensure video plays on load
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log("Video autoplay failed:", error)
-      });
-    }
+    const playVideo = async () => {
+      try {
+        if (videoRef.current) {
+          // Wait for video to be loaded
+          await videoRef.current.load();
+          // Try to play the video
+          await videoRef.current.play();
+          setIsReady(true);
+        }
+      } catch (error) {
+        console.error("Video autoplay failed:", error);
+        // Set ready state even if autoplay fails
+        setIsReady(true);
+      }
+    };
+
+    playVideo();
   }, []);
 
   return (
@@ -23,26 +34,27 @@ export default function Home() {
           <video
             ref={videoRef}
             autoPlay
+            playsInline
             muted
             loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            preload="auto"
+            className={`absolute inset-0 w-full h-full object-cover ${isReady ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}
           >
-            <source src="/egar.mp4" type="video/mp4" />
+            <source src="/contaboo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
 
         {/* Content */}
-        <div className="relative z-20 max-w-6xl mx-auto px-4 text-center pt-24 md:pt-20">
+        <div className="relative z-20 max-w-6xl mx-auto px-4 text-center pt-16 md:pt-24">
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyber-blue via-white to-cyber-purple bg-clip-text text-transparent mb-8 drop-shadow-2xl">
-              Next-Gen Server Management
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyber-blue via-white to-cyber-purple bg-clip-text text-transparent mb-6 md:mb-8 leading-tight">
+              Contaboo - Next-Gen Server Management
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-12 drop-shadow-lg">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 md:mb-12 px-4">
               Powerful shell scripts for managing your cloud infrastructure
             </p>
-            <button className="px-8 py-4 bg-cyber-blue hover:bg-cyber-purple text-cyber-dark font-bold rounded-lg transform transition-all hover:scale-105 hover:shadow-glow">
+            <button className="w-full sm:w-auto px-6 sm:px-8 py-4 bg-cyber-blue hover:bg-cyber-purple text-cyber-dark font-bold rounded-lg transform transition-all hover:scale-105 hover:shadow-glow">
               Get Started
             </button>
           </div>
@@ -55,8 +67,8 @@ export default function Home() {
       </section>
 
       {/* Features Grid */}
-      <section className="px-4 py-20 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8">
+      <section className="px-4 py-12 md:py-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {[
             {
               icon: '🌩️',
