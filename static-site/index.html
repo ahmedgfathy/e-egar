@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contaboo - Next-Gen Server Management</title>
+    <script src="https://cdn.tailwindcss.com?v=3.3.5"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <nav class="fixed w-full bg-black/80 backdrop-blur-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-cyan-400">Contaboo</a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="menu-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+
+            <div class="hidden md:flex space-x-4">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="mission.html" class="nav-link">Our Mission</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="relative h-screen flex items-center justify-center">
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-gray-900 z-10"></div>
+                <video 
+                    class="w-full h-full object-cover opacity-80" 
+                    autoplay 
+                    playsinline 
+                    muted 
+                    loop 
+                    preload="auto"
+                    poster="media/poster.jpg">
+                    <source src="media/contaboo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="relative z-20 text-center px-4">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+                    Contaboo - Next-Gen Server Management
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300">
+                    Powerful shell scripts for managing your cloud infrastructure
+                </p>
+                <button class="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-lg 
+                             font-semibold transition-colors">
+                    Get Started
+                </button>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gradient-to-b from-cyber-dark to-black">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="feature-card" onclick="window.location.href='/aws.html'">
+                        <span class="feature-icon">🌩️</span>
+                        <h3 class="text-xl font-semibold text-white">AWS Management</h3>
+                        <p class="text-gray-300">Automated scripts for AWS infrastructure</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">☁️</span>
+                        <h3 class="text-xl font-semibold text-white">Azure Solutions</h3>
+                        <p class="text-gray-300">Streamlined management for Azure services</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🚀</span>
+                        <h3 class="text-xl font-semibold text-white">GCP Automation</h3>
+                        <p class="text-gray-300">Efficient Google Cloud automation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
